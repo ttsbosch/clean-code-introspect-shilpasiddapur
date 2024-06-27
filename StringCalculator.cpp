@@ -7,10 +7,17 @@ using namespace std;
 
 int addNumbers(const std::string& input) {
     int sum = 0;
+    std::istringstream ss(input);
+    std::string token;
 
-    for (char c : input) {
-        // Convert character to integer and add to sum
-        sum += c - '0';  // Convert char to int by subtracting ASCII value of '0'
+    while (getline(ss, token, ',')) {
+        // Convert token to integer
+        int num = std::stoi(token);
+
+        // Add to sum only if the number is positive
+        if (num > 0) {
+            sum += num;
+        }
     }
 
     return sum;
@@ -31,9 +38,9 @@ std::string removeDelimiters(const std::string& input, const std::string& delimi
 int StringCalculator::add(string numbers){
     if(numbers.empty() || numbers == "0"){
          return 0;
-    }//;\n1;2
+    }
     else{
-        std::string delimiters = ",;: \t\n/";
+        std::string delimiters = ";: \t\n/";
         string result = removeDelimiters(numbers,delimiters);
         int sum = addNumbers(result);
         return sum;
