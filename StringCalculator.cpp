@@ -1,5 +1,5 @@
 #include "StringCalculator.h"
 
-int StringCalculator::Add(string numbers){
+int StringCalculator::add(string numbers){
     return 0;
 }
