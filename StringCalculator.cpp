@@ -5,13 +5,12 @@
 using namespace std;
 
 
-int sumFromString(const std::string& input) {
+int addNumbers(const std::string& input) {
     int sum = 0;
-    std::istringstream ss(input);
-    std::string token;
 
-    while (getline(ss, token, ',')) {
-        sum += std::stoi(token);
+    for (char c : input) {
+        // Convert character to integer and add to sum
+        sum += c - '0';  // Convert char to int by subtracting ASCII value of '0'
     }
 
     return sum;
@@ -34,7 +33,7 @@ int StringCalculator::add(string numbers){
          return 0;
     }
     else{
-        std::string delimiters = ";: \t\n";
+        std::string delimiters = ",;: \t\n";
         string result = removeDelimiters(numbers,delimiters);
         int sum = sumFromString(result);
         return sum;
