@@ -10,14 +10,8 @@ int addNumbers(const std::string& input) {
     std::istringstream ss(input);
     std::string token;
 
-    while (getline(ss, token, ',')) {
-        // Convert token to integer
-        int num = std::stoi(token);
-
-        // Add to sum only if the number is positive
-        if (num > 0) {
-            sum += num;
-        }
+    for (char c : input) {
+        sum += c - '0'; 
     }
 
     return sum;
@@ -40,7 +34,7 @@ int StringCalculator::add(string numbers){
          return 0;
     }
     else{
-        std::string delimiters = ";: \t\n/";
+        std::string delimiters = ",;: \t\n/";
         string result = removeDelimiters(numbers,delimiters);
         int sum = addNumbers(result);
         return sum;
