@@ -31,9 +31,9 @@ std::string removeDelimiters(const std::string& input, const std::string& delimi
 int StringCalculator::add(string numbers){
     if(numbers.empty() || numbers == "0"){
          return 0;
-    }
+    }//;\n1;2
     else{
-        std::string delimiters = ",;: \t\n";
+        std::string delimiters = ",;: \t\n/";
         string result = removeDelimiters(numbers,delimiters);
         int sum = addNumbers(result);
         return sum;
