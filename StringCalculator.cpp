@@ -34,7 +34,7 @@ int StringCalculator::add(string numbers){
          return 0;
     }
     else{
-        std::string delimiters = ",;: \t\n";
+        std::string delimiters = ";: \t\n";
         string result = removeDelimiters(numbers,delimiters);
         int sum = sumFromString(result);
         return sum;
