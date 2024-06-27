@@ -18,10 +18,12 @@ int sumFromString(const std::string& input) {
 }
 
 std::string removeDelimiters(const std::string& input, const std::string& delimiters) {
-    std::string result = input;
+    std::string result;
 
-    for (char delimiter : delimiters) {
-        result.erase(std::remove(result.begin(), result.end(), delimiter), result.end());
+    for (char c : input) {
+        if (delimiters.find(c) == std::string::npos) {
+            result += c;
+        }
     }
 
     return result;
