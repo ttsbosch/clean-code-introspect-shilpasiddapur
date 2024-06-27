@@ -17,12 +17,24 @@ int sumFromString(const std::string& input) {
     return sum;
 }
 
+std::string removeNewlines(const std::string& input) {
+    std::string result;
+
+    for (char c : input) {
+        if (c != '\n') {
+            result += c;
+        }
+    }
+    return result;
+}
+
 int StringCalculator::add(string numbers){
     if(numbers.empty() || numbers == "0"){
          return 0;
     }
     else{
-        int sum = sumFromString(numbers);
+        string result = removeNewlines(numbers);
+        int sum = sumFromString(result);
         return sum;
     }
    
