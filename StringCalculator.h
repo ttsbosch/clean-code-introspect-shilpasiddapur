@@ -5,5 +5,5 @@ using namespace std;
 
 class StringCalculator{
     public:
-    int Add(string numbers);
+    int add(string numbers);
 };
