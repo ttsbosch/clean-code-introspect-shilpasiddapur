@@ -52,7 +52,7 @@ TEST(StringCalculatorAddTests, IgnoreNumbersGreaterThan1000) {
     int result =objUnderTest.add(input);
 
     ASSERT_EQ(result, expectedresult);
-}
+}*/
 
 TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int expectedresult = 3;
@@ -61,4 +61,4 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int result = objUnderTest.add(input);
 
     ASSERT_EQ(result, expectedresult);
-}*/
+}
