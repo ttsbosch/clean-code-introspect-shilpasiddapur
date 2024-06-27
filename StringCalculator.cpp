@@ -4,18 +4,27 @@
 #include <string>
 using namespace std;
 
+
+int sumFromString(const std::string& input) {
+    int sum = 0;
+    std::istringstream ss(input);
+    std::string token;
+
+    while (getline(ss, token, ',')) {
+        sum += std::stoi(token);
+    }
+
+    return sum;
+}
+
 int StringCalculator::add(string numbers){
     if(numbers.empty() || numbers == "0"){
          return 0;
     }
     else{
-        istringstream input(numbers);
-        string token;
-        int sum = 0;
-        while (getline(input, token, ',')) {
-            sum += std::stoi(token);
-        }
+        int sum = sumFromString(numbers);
         return sum;
     }
    
 }
+
