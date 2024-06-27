@@ -17,14 +17,13 @@ int sumFromString(const std::string& input) {
     return sum;
 }
 
-std::string removeNewlines(const std::string& input) {
-    std::string result;
+std::string removeDelimiters(const std::string& input, const std::string& delimiters) {
+    std::string result = input;
 
-    for (char c : input) {
-        if (c != '\n') {
-            result += c;
-        }
+    for (char delimiter : delimiters) {
+        result.erase(std::remove(result.begin(), result.end(), delimiter), result.end());
     }
+
     return result;
 }
 
@@ -33,7 +32,8 @@ int StringCalculator::add(string numbers){
          return 0;
     }
     else{
-        string result = removeNewlines(numbers);
+        std::string delimiters = ",;: \t\n";
+        string result = removeDelimiters(numbers,delimiters);
         int sum = sumFromString(result);
         return sum;
     }
