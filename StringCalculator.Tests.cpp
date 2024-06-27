@@ -18,7 +18,7 @@ TEST(StringCalculatorAddTests, ExpectZeroForSingleZero) {
 
     ASSERT_EQ(result, expectedresult);
 }
-/*
+
 TEST(StringCalculatorAddTests, ExpectSumForTwoNumbers) {
     int expectedresult = 3;
     std::string input = "1,2";
@@ -44,7 +44,7 @@ TEST(StringCalculatorAddTests, ExpectSumWithNewlineDelimiter) {
 
     ASSERT_EQ(result, expectedresult);
 }
-
+/*
 TEST(StringCalculatorAddTests, IgnoreNumbersGreaterThan1000) {
     int expectedresult = 1;
     std::string input = "1,1001";
@@ -52,7 +52,7 @@ TEST(StringCalculatorAddTests, IgnoreNumbersGreaterThan1000) {
     int result =objUnderTest.add(input);
 
     ASSERT_EQ(result, expectedresult);
-}
+}*/
 
 TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int expectedresult = 3;
@@ -61,4 +61,4 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int result = objUnderTest.add(input);
 
     ASSERT_EQ(result, expectedresult);
-}*/
+}
